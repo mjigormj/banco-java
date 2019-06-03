@@ -15,21 +15,21 @@ public class banquinho {
             System.out.println("3 - Efetuar saque");
             System.out.println("4 - Extrato");
             System.out.println("5 - Encerrar");
-            System.out.println("opção: ");
+            System.out.print("opção: ");
             option = scan.nextInt();
 
             if (option == 1) {
-                System.out.print("Digite seu nome: ");
-                String nomeDoCliente = scan.next();
-                System.out.print("Digite o número da sua conta: ");
-                int numero = scan.nextInt();
+               banco.criarConta();
+            
+            } else if (option == 2){   
+               banco.depositar(3);
+                
             } else if (option == 3) {
                 banco.sacar(2);
-
+                
             } else if (option == 4) {
-                System.out.println(nomeDoCliente);
-                System.out.println(numero);
-                System.out.println(saldo);
+                banco.extrato();
+
             } else if (option == 5) {
                 System.exit(0);
             }
