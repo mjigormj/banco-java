@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Banco/|Banco/src/" kind="src" path=""/>
+	<classpathentry excluding="src/" kind="src" path="Banco"/>
+	<classpathentry kind="src" path="Banco/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,26 +1,32 @@
 package banco;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.List;
-import.java.util.ArrayList;
+
 
 
 public class Banco {
 
     static Scanner sacn = new Scanner (System.in);
-    static List<ContaCorrente> contas = new ArrayList<>();
-    
-    String nomeDoCliente;
-    int numero;
-    Double saldo = 100.00;
-    Scanner scan = new Scanner(System.in);
 
+    
+    int numConta; // null        
+    String nomeDoCliente; // null
+    int numero; // null
+    Double saldo = 100.00;
+
+    Scanner scan = new Scanner(System.in);
+    
+    ArrayList<Banco> contas = new ArrayList<Banco>();  
+    
     public void criarConta() {
+        contas.set(0, new Banco()); 
         System.out.print("Digite seu nome: ");
-        String nomeDoCliente = scan.next();
+        contas.get(0).nomeDoCliente = scan.next();
         System.out.print("Digite o número da sua conta: ");
-        int numero = scan.nextInt();
+        contas.get(0).numConta = scan.nextInt();
     }
+    
 
     public void depositar(double valorASerDepositado) {
         if (valorASerDepositado < 0) {
@@ -37,20 +43,17 @@ public class Banco {
         } else {
             saldo = saldo - valorASerSacado;
             System.out.println("Operação realizada com sucesso");
+            System.out.println("Seu novo saldo é:" + saldo);
         }
     }
 
-    public void extrato() {
-        System.out.println(nomeDoCliente);
-        System.out.println(numero);
-        System.out.println(saldo);
+    public void quantConts() {
+        
+        System.out.println("A quantia de contas neste banco é: "+contas.size());
+
+
+
     }
 
-    private static class ContaCorrente {
-
-        public ContaCorrente() {
-            
-        }
-    }
 
 }
